@@ -4,76 +4,93 @@ import React, { useState } from "react";
 
 const palavras = [
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Qual palavra não pertence ao grupo: Summer, Winter, Spring, Autumn, Elephant?",
+      'Qual palavra não pertence ao grupo: "Summer", "Winter", "Spring", "Autumn", "Elephant"?',
     ingles: "elephant",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Identifique a palavra que não está relacionada: Book, Pen, Ruler, Apple, Television?",
+      'Identifique a palavra que não está relacionada: "Book", "Pen", "Ruler", "Apple", "Television"?',
     ingles: "apple",
   },
   {
-    portugues: "Qual palavra não se encaixa: Red, Blue, Green, Chair, Yellow?",
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
+    portugues:
+      'Qual palavra não se encaixa: "Red", "Blue", "Green", "Chair", "Yellow"?',
     ingles: "chair",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Encontre a palavra que não pertence ao grupo: Lion, Tiger, Elephant, Snake, Airplane?",
+      'Encontre a palavra que não pertence ao grupo: "Lion", "Tiger", "Elephant", "Snake", "Airplane"?',
     ingles: "airplane",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Qual palavra não está associada: Pizza, Burger, Salad, Sandwich, Bicycle?",
+      'Qual palavra não está associada: "Pizza", "Burger", "Salad", "Sandwich", "Bicycle"?',
     ingles: "bicycle",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Qual dessas palavras não pertence ao grupo: Happy, Joyful, Sorrowful, Cheerful, Fruit?",
+      'Qual dessas palavras não pertence ao grupo: "Happy", "Joyful", "Sorrowful", "Cheerful", "Fruit"?',
     ingles: "fruit",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Identifique a palavra que não está relacionada: Apple, Orange, Banana, Carrot, Cat?",
+      'Identifique a palavra que não está relacionada: "Apple", "Orange", "Banana", "Carrot", "Cat"?',
     ingles: "Cat",
   },
   {
-    portugues: "Qual palavra não se encaixa: Run, Jump, Swim, Fly, Fire?",
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
+    portugues:
+      'Qual palavra não se encaixa: "Run", "Jump", "Swim", "Fly", "Fire"?',
     ingles: "Fire",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Encontre a palavra que não pertence ao grupo: Monday, Tuesday, Friday, Wednesday, Television?",
+      'Encontre a palavra que não pertence ao grupo: "Monday", "Tuesday", "Friday", "Wednesday", "Television"?',
     ingles: "television",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Qual palavra não está associada: Dog, Cat, Fish, Bird, Computer?",
+      'Qual palavra não está associada: "Dog", "Cat", "Fish", "Bird", "Computer"?',
     ingles: "computer",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Qual palavra não está associada: Guitar, Piano, Violin, Drum, Carrot?",
+      'Qual palavra não está associada: "Guitar", "Piano", "Violin", "Drum", "Carrot"?',
     ingles: "carrot",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Encontre a palavra que não pertence ao grupo: Doctor, Nurse, Teacher, Plumber, Keyboard?",
+      'Encontre a palavra que não pertence ao grupo: "Doctor", "Nurse", "Teacher", "Plumber", "Keyboard"?',
     ingles: "keyboard",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Qual palavra não se encaixa: Car, Bus, Train, Ship, Strawberry?",
+      'Qual palavra não se encaixa: "Car", "Bus", "Train", "Ship", "Strawberry"?',
     ingles: "ship",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Identifique a palavra que não está relacionada: Desk, Chair, Lamp, Sofa, Banana?",
+      'Identifique a palavra que não está relacionada: "Desk", "Chair", "Lamp", "Sofa", "Banana"?',
     ingles: "banana",
   },
   {
+    // CORREÇÃO: Usando aspas simples para delimitar a string.
     portugues:
-      "Qual dessas palavras não pertence ao grupo: Football, Basketball, Tennis, Water, Volleyball?",
+      'Qual dessas palavras não pertence ao grupo: "Football", "Basketball", "Tennis", "Water", "Volleyball"?',
     ingles: "water",
   },
 ];
@@ -104,12 +121,20 @@ const Jogo2: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-purple-300">
+           {" "}
       <h1 className="mb-8 text-3xl font-bold">
-        Jogo de Correspondência de Palavras
+                Jogo de Correspondência de Palavras      {" "}
       </h1>
+           {" "}
       <div className="mb-4">
-        <p>Qual é a tradução de "{palavras[palavraAtual].portugues}"?</p>
+                {/* A aspa dupla aqui é uma aspa literal e não causa erro */}   
+           {" "}
+        <p>
+          Qual é a tradução de &quot;{palavras[palavraAtual].portugues}&quot;?
+        </p>
+               {" "}
         <div className="flex items-center">
+                   {" "}
           <input
             type="text"
             value={respostaUsuario}
@@ -117,34 +142,47 @@ const Jogo2: React.FC = () => {
             className="border border-gray-400 rounded px-2 py-1 mt-2 mr-2"
             disabled={mostrarResposta}
           />
+                   {" "}
           {mostrarResposta && (
             <p>
+                           {" "}
               {acertou ? "Parabéns, você acertou!" : "Que pena, você errou."} A
-              resposta correta é: {palavras[palavraAtual].ingles}
+                            resposta correta é: {palavras[palavraAtual].ingles} 
+                       {" "}
             </p>
           )}
+                 {" "}
         </div>
+             {" "}
       </div>
+           {" "}
       <div className="mb-4">
+               {" "}
         <button
           onClick={verificarResposta}
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2"
           disabled={mostrarResposta}
         >
-          Verificar Resposta
+                    Verificar Resposta        {" "}
         </button>
+               {" "}
         <button
           onClick={avancarPalavra}
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
         >
-          Próxima Palavra
+                    Próxima Palavra        {" "}
         </button>
+             {" "}
       </div>
+           {" "}
       <Link href="/Materias/ingles" passHref>
+               {" "}
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-8">
-          Voltar à página inicial
+                    Voltar à página inicial        {" "}
         </button>
+             {" "}
       </Link>
+         {" "}
     </div>
   );
 };
